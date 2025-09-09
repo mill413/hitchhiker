@@ -1,0 +1,29 @@
+name: Generate and Download Tar Bundle
+
+on:
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  generate-tar:
+    runs-on: ubuntu-latest # 使用最新的Ubuntu运行环境
+
+    steps:
+      - name: Checkout current repository (optional)
+        uses: actions/checkout@v4
+        # 如果你需要当前仓库的某些文件，可以取消这步的注释
+
+      - name: Clone target repository and run script
+        run: |
+          git clone https://github.com/SwanHubX/self-hosted.git
+          cd self-hosted
+          chmod +x scripts/pull-image.sh # 确保脚本有执行权限
+          ./scripts/pull-image.sh        # 执行脚本生成tar包
+
+      - name: Upload generated tar artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-tarball
+          path: |
+            self-hosted/*.tar
+            self-hosted/*.tar.gz
+          retention-days: 7 #  artifact保留天数，可按需调整
