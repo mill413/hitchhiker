@@ -1,5 +1,6 @@
 # 使用官方 Node.js 运行时作为基础镜像
-FROM node:lts
+# FROM node:lts
+FROM ubuntu/node:18-24.04_edge
 
 # 安装 pnpm
 RUN npm install -g pnpm
@@ -9,7 +10,7 @@ WORKDIR /app
 
 # 从 GitHub 拉取 presentation-ai 项目的代码
 # 注意：这里假设仓库是公开的，如果是私有仓库需要处理认证
-RUN apt-get update && apt-get install -y git
+RUN apt-get update && apt-get install -y git vim postgresql postgresql-contrib
 RUN git clone https://github.com/allweonedev/presentation-ai.git .
 
 # 安装项目依赖
