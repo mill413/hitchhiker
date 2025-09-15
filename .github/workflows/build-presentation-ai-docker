@@ -1,0 +1,32 @@
+name: Build Docker Image and Export Tar
+
+on:
+  push:
+    branches: [ main ]  # 在推送到 main 分支时触发
+  workflow_dispatch:    # 允许手动触发
+
+jobs:
+  build-docker-image:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        run: |
+          docker build -t presentation-ai-image .
+
+      - name: Save Docker image as tar
+        run: |
+          docker save presentation-ai-image -o presentation-ai-image.tar
+
+      - name: Upload Docker image tar as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: presentation-ai-docker-image
+          path: presentation-ai-image.tar
+          retention-days: 7  # 保留时间，可按需调整
