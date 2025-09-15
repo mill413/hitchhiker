@@ -1,6 +1,5 @@
 # 使用官方 Node.js 运行时作为基础镜像
-# FROM node:lts
-FROM ubuntu/node:18-24.04_edge
+FROM node:lts
 
 # 安装 pnpm
 RUN npm install -g pnpm
