@@ -24,18 +24,18 @@ jobs:
           docker pull airbyte/keycloak-setup:build-fd34e2f9d7-23826-master
           docker pull airbyte/cron:build-fd34e2f9d7-23826-master
           docker pull airbyte/worker:build-fd34e2f9d7-23826-master
-          docker pull airbyte/workload-api-server:build-fd34e2f9d7-23826-master
-          docker pull airbyte/bootloader:build-fd34e2f9d7-23826-master
-          docker pull airbyte/connector-rollout-worker:build-fd34e2f9d7-23826-master
-          docker pull airbyte/metrics-reporter:build-fd34e2f9d7-23826-master
-          docker pull airbyte/db:build-fd34e2f9d7-23826-master
-          docker pull airbyte/keycloak:build-fd34e2f9d7-23826-master
-          docker pull airbyte/connector-builder-server:dev-1279e46792
-          docker pull airbyte/webapp:1.7.8
-          docker pull airbyte/airbyte-base-java-image:3.3.7
-          docker pull temporalio/auto-setup:1.27.2
-          docker pull temporalio/ui:2.30.1
-          docker pull minio/minio:RELEASE.2023-11-20T22-40-07Z
+          # docker pull airbyte/workload-api-server:build-fd34e2f9d7-23826-master
+          # docker pull airbyte/bootloader:build-fd34e2f9d7-23826-master
+          # docker pull airbyte/connector-rollout-worker:build-fd34e2f9d7-23826-master
+          # docker pull airbyte/metrics-reporter:build-fd34e2f9d7-23826-master
+          # docker pull airbyte/db:build-fd34e2f9d7-23826-master
+          # docker pull airbyte/keycloak:build-fd34e2f9d7-23826-master
+          # docker pull airbyte/connector-builder-server:dev-1279e46792
+          # docker pull airbyte/webapp:1.7.8
+          # docker pull airbyte/airbyte-base-java-image:3.3.7
+          # docker pull temporalio/auto-setup:1.27.2
+          # docker pull temporalio/ui:2.30.1
+          # docker pull minio/minio:RELEASE.2023-11-20T22-40-07Z
 
       - name: Save all images to single tar file
         run: |
@@ -46,18 +46,18 @@ jobs:
             airbyte/keycloak-setup:build-fd34e2f9d7-23826-master \
             airbyte/cron:build-fd34e2f9d7-23826-master \
             airbyte/worker:build-fd34e2f9d7-23826-master \
-            airbyte/workload-api-server:build-fd34e2f9d7-23826-master \
-            airbyte/bootloader:build-fd34e2f9d7-23826-master \
-            airbyte/connector-rollout-worker:build-fd34e2f9d7-23826-master \
-            airbyte/metrics-reporter:build-fd34e2f9d7-23826-master \
-            airbyte/db:build-fd34e2f9d7-23826-master \
-            airbyte/keycloak:build-fd34e2f9d7-23826-master \
-            airbyte/connector-builder-server:dev-1279e46792 \
-            airbyte/webapp:1.7.8 \
-            airbyte/airbyte-base-java-image:3.3.7 \
-            temporalio/auto-setup:1.27.2 \
-            temporalio/ui:2.30.1 \
-            minio/minio:RELEASE.2023-11-20T22-40-07Z \
+            # airbyte/workload-api-server:build-fd34e2f9d7-23826-master \
+            # airbyte/bootloader:build-fd34e2f9d7-23826-master \
+            # airbyte/connector-rollout-worker:build-fd34e2f9d7-23826-master \
+            # airbyte/metrics-reporter:build-fd34e2f9d7-23826-master \
+            # airbyte/db:build-fd34e2f9d7-23826-master \
+            # airbyte/keycloak:build-fd34e2f9d7-23826-master \
+            # airbyte/connector-builder-server:dev-1279e46792 \
+            # airbyte/webapp:1.7.8 \
+            # airbyte/airbyte-base-java-image:3.3.7 \
+            # temporalio/auto-setup:1.27.2 \
+            # temporalio/ui:2.30.1 \
+            # minio/minio:RELEASE.2023-11-20T22-40-07Z \
             -o airbyte-img.tar
 
       - name: Display file size
