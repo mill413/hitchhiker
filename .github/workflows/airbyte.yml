@@ -41,11 +41,6 @@ jobs:
         run: |
           # 将所有镜像保存到一个 tar 文件中
           docker save -o airbyte-img.tar \
-            # airbyte/server:build-fd34e2f9d7-23826-master \
-            # airbyte/workload-launcher:build-fd34e2f9d7-23826-master \
-            # airbyte/keycloak-setup:build-fd34e2f9d7-23826-master \
-            # airbyte/cron:build-fd34e2f9d7-23826-master \
-            # airbyte/worker:build-fd34e2f9d7-23826-master
             airbyte/workload-api-server:build-fd34e2f9d7-23826-master \
             airbyte/bootloader:build-fd34e2f9d7-23826-master \
             airbyte/connector-rollout-worker:build-fd34e2f9d7-23826-master \
