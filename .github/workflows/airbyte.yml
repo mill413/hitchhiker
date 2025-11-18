@@ -40,12 +40,12 @@ jobs:
       - name: Save all images to single tar file
         run: |
           # 将所有镜像保存到一个 tar 文件中
-          docker save \
+          docker save -o airbyte-img.tar \
             airbyte/server:build-fd34e2f9d7-23826-master \
             airbyte/workload-launcher:build-fd34e2f9d7-23826-master \
             airbyte/keycloak-setup:build-fd34e2f9d7-23826-master \
             airbyte/cron:build-fd34e2f9d7-23826-master \
-            airbyte/worker:build-fd34e2f9d7-23826-master \
+            airbyte/worker:build-fd34e2f9d7-23826-master
             # airbyte/workload-api-server:build-fd34e2f9d7-23826-master \
             # airbyte/bootloader:build-fd34e2f9d7-23826-master \
             # airbyte/connector-rollout-worker:build-fd34e2f9d7-23826-master \
@@ -58,7 +58,6 @@ jobs:
             # temporalio/auto-setup:1.27.2 \
             # temporalio/ui:2.30.1 \
             # minio/minio:RELEASE.2023-11-20T22-40-07Z \
-            -o airbyte-img.tar
 
       - name: Display file size
         run: |
