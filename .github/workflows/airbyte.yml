@@ -19,18 +19,18 @@ jobs:
       - name: Pull Airbyte images
         run: |
           # 拉取所有指定的 Airbyte 相关镜像
-          # docker pull airbyte/server:build-fd34e2f9d7-23826-master
-          # docker pull airbyte/workload-launcher:build-fd34e2f9d7-23826-master
-          # docker pull airbyte/keycloak-setup:build-fd34e2f9d7-23826-master
-          # docker pull airbyte/cron:build-fd34e2f9d7-23826-master
-          # docker pull airbyte/worker:build-fd34e2f9d7-23826-master
-          # docker pull airbyte/workload-api-server:build-fd34e2f9d7-23826-master
-          # docker pull airbyte/bootloader:build-fd34e2f9d7-23826-master
-          # docker pull airbyte/connector-rollout-worker:build-fd34e2f9d7-23826-master
-          # docker pull airbyte/metrics-reporter:build-fd34e2f9d7-23826-master
-          # docker pull airbyte/db:build-fd34e2f9d7-23826-master    
+          docker pull airbyte/server:2.0.1
+          docker pull airbyte/workload-launcher:2.0.1
+          docker pull airbyte/keycloak-setup:build-fd34e2f9d7-23826-master
+          docker pull airbyte/cron:2.0.1
+          docker pull airbyte/worker:2.0.1
+          docker pull airbyte/workload-api-server:2.0.1
+          docker pull airbyte/bootloader:2.0.1
+          docker pull airbyte/connector-rollout-worker:build-fd34e2f9d7-23826-master
+          docker pull airbyte/metrics-reporter:build-fd34e2f9d7-23826-master
+          docker pull airbyte/db:1.7.0-17
           docker pull airbyte/keycloak:build-fd34e2f9d7-23826-master
-          docker pull airbyte/connector-builder-server:dev-1279e46792
+          docker pull airbyte/connector-builder-server:2.0.1
           docker pull airbyte/webapp:1.7.8
           docker pull airbyte/airbyte-base-java-image:3.3.7
           docker pull temporalio/auto-setup:1.27.2
