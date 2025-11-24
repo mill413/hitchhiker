@@ -40,7 +40,7 @@ jobs:
       - name: Save all images to single tar file
         run: |
           # 将所有镜像保存到一个 tar 文件中
-          docker save -o airbyte-img.tar \
+          docker save -o airbyte-img1.tar \
             airbyte/server:2.0.1 \
             airbyte/workload-launcher:2.0.1 \
             airbyte/keycloak-setup:build-fd34e2f9d7-23826-master \
