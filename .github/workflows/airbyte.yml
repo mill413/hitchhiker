@@ -47,14 +47,14 @@ jobs:
             airbyte/cron:2.0.1 \
             airbyte/worker:2.0.1 \
 
-      - name: Display file size
-        run: |
-          echo "Generated tar file size:"
-          ls -lh airbyte-img.tar
+      # - name: Display file size
+      #   run: |
+      #     echo "Generated tar file size:"
+      #     ls -lh airbyte-img.tar
 
       - name: Upload airbyte images package
         uses: actions/upload-artifact@v4
         with:
           name: airbyte-images-package
-          path: airbyte-img.tar
+          path: airbyte-img1.tar
           retention-days: 30
