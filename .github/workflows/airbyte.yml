@@ -41,7 +41,7 @@ jobs:
       - name: Save all images to single tar file
         run: |
           # 将所有镜像保存到一个 tar 文件中
-          docker save -o kube.tar registry.cn-hangzhou.aliyuncs.com/google_containers/kube_scheduler:v1.20.0
+          docker save -o kube.tar registry.cn-hangzhou.aliyuncs.com/google_containers/kube-scheduler:v1.20.0
 
       # - name: Display file size
       #   run: |
