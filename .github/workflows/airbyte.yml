@@ -19,11 +19,12 @@ jobs:
       - name: Pull Airbyte images
         run: |
           # 拉取所有指定的 Airbyte 相关镜像
-          docker pull airbyte/server:2.0.1
-          docker pull airbyte/workload-launcher:2.0.1
-          docker pull airbyte/keycloak-setup:build-fd34e2f9d7-23826-master
-          docker pull airbyte/cron:2.0.1
-          docker pull airbyte/worker:2.0.1
+          docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube_scheduler:v1.20.0
+          # docker pull airbyte/server:2.0.1
+          # docker pull airbyte/workload-launcher:2.0.1
+          # docker pull airbyte/keycloak-setup:build-fd34e2f9d7-23826-master
+          # docker pull airbyte/cron:2.0.1
+          # docker pull airbyte/worker:2.0.1
           # docker pull airbyte/workload-api-server:2.0.1
           # docker pull airbyte/bootloader:2.0.1
           # docker pull airbyte/connector-rollout-worker:build-fd34e2f9d7-23826-master
@@ -40,12 +41,7 @@ jobs:
       - name: Save all images to single tar file
         run: |
           # 将所有镜像保存到一个 tar 文件中
-          docker save -o airbyte-img1.tar \
-            airbyte/server:2.0.1 \
-            airbyte/workload-launcher:2.0.1 \
-            airbyte/keycloak-setup:build-fd34e2f9d7-23826-master \
-            airbyte/cron:2.0.1 \
-            airbyte/worker:2.0.1 \
+          docker save -o kube.tar registry.cn-hangzhou.aliyuncs.com/google_containers/kube_scheduler:v1.20.0
 
       # - name: Display file size
       #   run: |
@@ -56,5 +52,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: airbyte-images-package
-          path: airbyte-img1.tar
+          path: kube.tar
           retention-days: 30
