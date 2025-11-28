@@ -19,7 +19,7 @@ jobs:
       - name: Pull Airbyte images
         run: |
           # 拉取所有指定的 Airbyte 相关镜像
-          docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube_scheduler:v1.20.0
+          docker pull swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/registry.cn-hangzhou.aliyuncs.com/google_containers/kube_scheduler:v1.20.0
           # docker pull airbyte/server:2.0.1
           # docker pull airbyte/workload-launcher:2.0.1
           # docker pull airbyte/keycloak-setup:build-fd34e2f9d7-23826-master
